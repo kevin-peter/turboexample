@@ -1,23 +1,35 @@
-import React from "react";
+import React, { lazy, Suspense, ReactNode } from "react";
 import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import { sharedRoutes } from "./routes";
 
-const BetdayProLayout = React.lazy(() => import("./themes/betdaypro/Layout"));
-const BetdayLayout = React.lazy(() => import("./themes/betday/Layout"));
+// Dynamically import all layouts inside ./themes
+const layoutMap = import.meta.glob("./themes/*/Layout.tsx");
+
+// Load the theme layout based on VITE_THEME
+const getLayoutComponent = (theme: string) => {
+  const path = `./themes/${theme}/Layout.tsx`;
+  const loader = layoutMap[path];
+
+  if (!loader) {
+    throw new Error(`Layout for theme "${theme}" not found at ${path}`);
+  }
+
+  return lazy(() => loader() as Promise<{ default: React.ComponentType<{ children: ReactNode }> }>);
+};
 
 const AppRoutes = () => useRoutes(sharedRoutes);
 
 export const App = () => {
-
-  const Layout = import.meta.env.VITE_THEME === "betday" ? BetdayLayout : BetdayProLayout;
+  const theme = import.meta.env.VITE_THEME || "betday";
+  const Layout = getLayoutComponent(theme);
 
   return (
     <Router>
-      <React.Suspense fallback={""}>
+      <Suspense fallback={<div>Loading layout...</div>}>
         <Layout>
           <AppRoutes />
         </Layout>
-      </React.Suspense>
+      </Suspense>
     </Router>
   );
 };
