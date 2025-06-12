@@ -6,7 +6,12 @@
   },
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ."
+    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "build:components": "tsc",
+    "check-types": "tsc --noEmit",
+    "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev:components": "tsc --watch",
+    "lint": "eslint src --max-warnings 0"
   },
   "dependencies": {
     "react": "^19.1.0",

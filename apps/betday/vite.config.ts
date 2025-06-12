@@ -6,6 +6,7 @@ import envConfig from '../env.config'; // shared env config
 const targetEnv = process.env.APP_ENV || 'betday';
 const injected = envConfig[targetEnv] || {};
 
+
 const defineEnv = Object.fromEntries(
   Object.entries(injected).map(([key, value]) => [
     `import.meta.env.${key}`,
