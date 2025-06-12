@@ -1,0 +1,12 @@
+{
+  "name": "@repo/hooks",
+  "version": "1.0.0",
+  "exports": {
+    ".": "./index.ts",
+    "./use-user": "./hooks/useUsers.ts"
+  },
+  "dependencies": {
+    "@repo/api-client": "^1.0.0",
+    "react": "^19.1.0"
+  }
+}
