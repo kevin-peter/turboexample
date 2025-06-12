@@ -1,20 +1,7 @@
-import "./App.css";
-import { Header, Counter, UserList } from "@repo/ui";
-import { useUsers } from "@repo/hooks";
+import App from "@repo/ui";
 
-function App() {
-  const { users, loading, error } = useUsers();
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
-
-  return (
-    <>
-      <Header title="Welcome to Omkar" />
-      <Counter></Counter>
-      <UserList users={users} />
-    </>
-  );
-}
+const App = () => {
+  return <App theme="theme1" />;
+};
 
 export default App;

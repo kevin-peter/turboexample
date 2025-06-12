@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
+import { App as SharedApp } from "@repo/ui";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <SharedApp theme={import.meta.env.VITE_THEME}/>
+  </StrictMode>
 )
