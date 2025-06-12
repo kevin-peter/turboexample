@@ -1,7 +1,5 @@
-import React from "react";
-
 export const Header = () => (
-  <header className="header theme1">
+  <header className="bg-green-500 text-white p-4 rounded-lg">
     <h1>🟦 Theme 1 — Elegant UI</h1>
     <nav>
       <a href="/">Home</a>

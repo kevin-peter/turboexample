@@ -4,7 +4,7 @@ import { Footer } from "./Footer";
 import { Sidebar } from "../../components/Sidebar";
 
 const BetdayLayout= ({ children }: { children: React.ReactNode }) => (
-    <div className="theme2-layout">
+    <div className="bg-blue-500">
     <Header />
     <Sidebar />
     <main>{children}</main>
