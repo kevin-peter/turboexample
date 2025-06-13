@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  content: ['./src/**/*.html', './src/**/*.jsx'],
+  content: [
+  './index.html',
+  './src/**/*.{js,ts,jsx,tsx}',
+  '../../packages/ui/**/*.{js,ts,jsx,tsx}', // ✅ your shared components
+],
   safelist: [
-    'dark'
+    'bg-primary-900'
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
@@ -12,7 +16,7 @@ export default {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       colors: {
-        
+
         primary: {
           50: 'rgb(248, 250, 252)',
           100: 'rgb(241, 245, 249)',
@@ -46,11 +50,12 @@ export default {
           '0%, 100%': { backgroundColor: '#6bc0ff' },
           '50%': { backgroundColor: '#f7c139' },
         },
-      fontFamily: {
-        'sans': ['Roboto','Roboto Condensed']
-      }
-    },
-  }
-},
-plugins: [],
+        fontFamily: {
+          'sans': ['Roboto', 'Roboto Condensed']
+        }
+      },
+    }
+  },
+  plugins: [],
 }
+
