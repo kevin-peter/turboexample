@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "exports": {
     ".": "./index.ts",
-    "./styles.css": "./dist/index.css",
+    "./dist/index.css": "./dist/index.css",
     "./*": "./dist/*.js"
   },
   "license": "MIT",
@@ -25,6 +25,8 @@
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/cli": "^4.1.10",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.5",
     "tailwindcss": "^4.1.10",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.0",

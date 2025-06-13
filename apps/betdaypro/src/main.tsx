@@ -5,6 +5,6 @@ import { App as SharedApp } from "@repo/ui";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <SharedApp/>
+    <SharedApp />
   </StrictMode>
 )

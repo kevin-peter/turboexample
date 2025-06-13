@@ -1,7 +1,7 @@
 import React from "react";
 
 export const Footer = () => (
-  <footer className="footer theme2">
-    <p>🕶️ Theme 2 Footer — All rights reserved.</p>
+  <footer className="bg-primary-700">
+    <p>🕶️ 🟦{import.meta.env.VITE_THEME} Footer — All rights reserved.</p>
   </footer>
 );

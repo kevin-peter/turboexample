@@ -1,17 +1,22 @@
-import type { Config } from 'tailwindcss';
-import preset from '../../tailwind-preset/tailwind.preset';
+/** @type {import('tailwindcss').Config} */
 
-const config: Config = {
-  presets: [preset], // ✅ uses shared base config
-  content: ['./src/**/*.html', './src/**/*.jsx'],
-  safelist: ['dark'],
-  darkMode: 'class',
+export default {
+  content: [
+  './index.html',
+  './src/**/*.{js,ts,jsx,tsx}',
+  '../../packages/ui/**/*.{js,ts,jsx,tsx}', // ✅ your shared components
+],
+  safelist: [
+    'dark'
+  ],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       colors: {
+
         primary: {
           50: 'rgb(248, 250, 252)',
           100: 'rgb(241, 245, 249)',
@@ -45,13 +50,12 @@ const config: Config = {
           '0%, 100%': { backgroundColor: '#6bc0ff' },
           '50%': { backgroundColor: '#f7c139' },
         },
+        fontFamily: {
+          'sans': ['Roboto', 'Roboto Condensed']
+        }
       },
-      fontFamily: {
-        sans: ['Roboto', 'Roboto Condensed'],
-      },
-    },
+    }
   },
   plugins: [],
-};
+}
 
-export default config;

@@ -17,7 +17,7 @@ const defineEnv = Object.fromEntries(
 export default defineConfig({
   plugins: [react()],
   css: {
-    postcss: path.resolve(__dirname, 'postcss.config.cjs'),
+    postcss: path.resolve(__dirname, 'postcss.config.js'),
   },
   define: defineEnv,
   resolve: {

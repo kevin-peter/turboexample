@@ -1,4 +1,2 @@
-/* Component-level styles for the UI package */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@repo/tailwind-config";
